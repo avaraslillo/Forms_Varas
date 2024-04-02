@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
+import {FormGroup,FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-component',
   templateUrl: './form-component.component.html',
-  styleUrl: './form-component.component.css'
+  styleUrls: ['./form-component.component.css']
 })
 export class FormComponentComponent {
 
