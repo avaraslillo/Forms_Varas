@@ -1,0 +1,124 @@
+<div class="container-fluid">
+    <h3>Por favor, ingrese sus datos</h3>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <form [formGroup]="formPerfil" (ngSubmit)="onSubmit()">
+                <div class="row g-3">
+                    
+                    <label for="rut" class="form-label col-md-4">RUT: </label>
+                    <div class="col-md-8">
+                        <input id="rut" type="text" formControlName="rut" class="form-control"
+                        [class.is-valid]="rutControl?.valid"
+                        [class.is-invalid]="
+                          rutControl?.touched && rutControl?.invalid
+                        "/>
+                    </div>
+                    <div
+                    *ngIf="rutControl?.hasError('required')"
+                        class="invalid-feedback"
+                    >
+                        Este campo es requerido
+                    </div>
+                    <div
+                    *ngIf="rutControl?.hasError('pattern')"
+                        class="invalid-feedback"
+                    >
+                        El formato del RUT es incorrecto
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <label for="nombres" class="form-label col-md-4">Nombres: </label>
+                    <div class="col-md-8">
+                        <input id="nombres" type="text" formControlName="nombres" class="form-control"
+                        [class.is-valid]="nombresControl?.valid"
+                        [class.is-invalid]="
+                          nombresControl?.touched && nombresControl?.invalid
+                        "/>
+                    </div>
+                    <div
+                    *ngIf="nombresControl?.hasError('required')"
+                        class="invalid-feedback"
+                    >
+                        Este campo es requerido
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <label for="apellidos" class="form-label col-md-4">Apellidos: </label>
+                    <div class="col-md-8">
+                        <input id="apellidos" type="text" formControlName="apellidos" class="form-control"
+                        [class.is-valid]="apellidosControl?.valid"
+                        [class.is-invalid]="
+                          apellidosControl?.touched && apellidosControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <label for="email" class="form-label col-md-4">Correo electrónico: </label>
+                    <div class="col-md-8">
+                        <input id="email" type="text" formControlName="email" class="form-control"
+                        [class.is-valid]="emailControl?.valid"
+                        [class.is-invalid]="
+                          emailControl?.touched && emailControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <label for="fechaNacimiento" class="form-label col-md-4">Fecha de Nacimiento: </label>
+                    <div class="col-md-8">
+                        <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento" class="form-control"
+                        [class.is-valid]="fechaNacimientoControl?.valid"
+                        [class.is-invalid]="
+                          fechaNacimientoControl?.touched && fechaNacimientoControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    
+                    <label for="direccion" class="form-label col-md-4">Dirección: </label>
+                    <div class="col-md-8">
+                        <input id="direccion" type="text" formControlName="direccion" class="form-control"
+                        [class.is-valid]="direccionControl?.valid"
+                        [class.is-invalid]="
+                          direccionControl?.touched && direccionControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <label for="comuna" class="form-label col-md-4">Comuna: </label>
+                    <div class="col-md-8">
+                        <input id="comuna" type="text" formControlName="comuna" class="form-control"
+                        [class.is-valid]="comunaControl?.valid"
+                        [class.is-invalid]="
+                          comunaControl?.touched && comunaControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <label for="region" class="form-label col-md-4">Región: </label>
+                    <div class="col-md-8">
+                        <input id="region" type="text" formControlName="region" class="form-control"
+                        [class.is-valid]="regionControl?.valid"
+                        [class.is-invalid]="
+                          regionControl?.touched && regionControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    
+                    <label for="telefono" class="form-label col-md-4">Teléfono: </label>
+                    <div class="col-md-8">
+                        <input id="telefono" type="text" formControlName="telefono" class="form-control"
+                        [class.is-valid]="telefonoControl?.valid"
+                        [class.is-invalid]="
+                          telefonoControl?.touched && telefonoControl?.invalid"/>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>   
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-md-6">
+            <pre>{{ formPerfil.status }}</pre>
+            <pre>{{ formPerfil.value | json}}</pre>
+        </div>
+    </div>
+</div>
